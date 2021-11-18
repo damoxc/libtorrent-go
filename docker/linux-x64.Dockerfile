@@ -1,5 +1,7 @@
 ARG IMAGE_TAG=latest
-FROM i96751414/cross-compiler-linux-x64:${IMAGE_TAG}
+FROM cross-compiler-linux-x64:${IMAGE_TAG}
+
+RUN apt-get update && apt-get dist-upgrade -y -yy
 
 RUN mkdir -p /build
 WORKDIR /build
